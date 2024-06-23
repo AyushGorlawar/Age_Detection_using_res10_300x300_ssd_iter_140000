@@ -40,3 +40,40 @@ pip install -r requirements.txt
 - Res10_300x300_SSD Model
 - Age Detection Model
 - Place these models in a models directory within the project.
+
+## Running the Age Detector
+- To run the age detector on a webcam feed, use the following command:
+
+```
+python age_detector.py
+```
+## To run the age detector on a video file, use the following command:
+```
+python age_detector.py --input path/to/video.mp4
+```
+## Command Line Arguments
+--input: Path to the video file. If not specified, the webcam feed will be used.
+--confidence: Minimum probability to filter weak detections (default is 0.5).
+Directory Structure
+```
+age-detection-res10/
+├── models/
+│   ├── res10_300x300_ssd_iter_140000.caffemodel
+│   ├── deploy.prototxt
+│   ├── age_net.caffemodel
+│   └── age_deploy.prototxt
+├── src/
+│   ├── age_detector.py
+│   ├── utils.py
+│   └── ...
+├── samples/
+│   └── example_video.mp4
+├── requirements.txt
+└── README.md
+```
+#@ Dependencies
+The project requires the following Python packages:
+```
+opencv-python
+numpy
+```
